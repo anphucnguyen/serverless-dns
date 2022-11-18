@@ -35,7 +35,7 @@
     "undici": "^5.12.0"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
+    "@types/node": "^18.11.9",
     "buffer": "^6.0.3",
     "clinic": "^12.0.0",
     "eslint": "^8.5.0",
