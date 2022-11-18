@@ -43,7 +43,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.4",
-    "prettier": "2.5.1",
+    "prettier": "2.7.1",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.2",
     "wrangler": "^2.1.15"
