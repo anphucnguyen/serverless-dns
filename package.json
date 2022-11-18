@@ -28,24 +28,24 @@
     "@serverless-dns/dns-parser": "github:serverless-dns/dns-parser#v2.1.2",
     "@serverless-dns/lfu-cache": "github:serverless-dns/lfu-cache#v3.4.1",
     "@serverless-dns/trie": "github:serverless-dns/trie#v0.0.7",
-    "dotenv": "^10.0.0",
+    "dotenv": "^16.0.3",
     "httpx-server": "^1.4.4",
     "node-polyfill-webpack-plugin": "^2.0.1",
     "proxy-protocol-js": "^4.0.5",
-    "undici": "^4.13.0"
+    "undici": "^5.12.0"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
+    "@types/node": "^18.11.9",
     "buffer": "^6.0.3",
-    "clinic": "^11.1.0",
+    "clinic": "^12.0.0",
     "eslint": "^8.5.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.1.4",
-    "prettier": "2.5.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1",
     "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.2",
+    "webpack-cli": "^5.0.0",
     "wrangler": "^2.1.15"
   },
   "lint-staged": {
