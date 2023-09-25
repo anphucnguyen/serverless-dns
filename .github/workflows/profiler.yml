@@ -52,7 +52,7 @@ jobs:
 
     steps:
       - name: 🍌 Checkout
-        uses: actions/checkout@v4.0.0
+        uses: actions/checkout@v4.1.0
         with:
           ref: ${{ env.GIT_REF }}
           fetch-depth: 0
