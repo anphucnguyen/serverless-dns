@@ -151,7 +151,7 @@ jobs:
 
       # experimental: github.com/superfly/flyctl-actions/pull/20
       - name: 🏗 Setup flyctl @ latest
-        uses: superfly/flyctl-actions/setup-flyctl@ddcac349402ef55840d9870785f4df1890768078 # master
+        uses: superfly/flyctl-actions/setup-flyctl@fc53c09e1bc3be6f54706524e3b82c4f462f77be # master
         with:
           version: latest
 
