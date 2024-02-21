@@ -111,7 +111,7 @@ jobs:
       - name: 🤸🏼 Deploy to deno.com
         id: dd
         if: ${{ env.DEPLOY_MODE == 'action' }}
-        uses: denoland/deployctl@f21311b48f62f0063e3c729fc8a6a5dcdc4da7f9 # 1.10.3
+        uses: denoland/deployctl@6dce4affe85fbcd9d8917e56c4a49b066b8cc306 # 1.10.5
         with:
           project: ${{ env.PROJECT_NAME }}
           entrypoint: ${{ env.OUT_FILE }}
