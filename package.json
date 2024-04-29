@@ -44,7 +44,7 @@
     "@types/node": "^20.5.1",
     "buffer": "^6.0.3",
     "clinic": "^13.0.0",
-    "eslint": "^8.5.0",
+    "eslint": "^9.1.1",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^9.0.6",
