@@ -96,7 +96,7 @@ jobs:
       - name: 🦕 Install Deno @1.29
         uses: denoland/setup-deno@5fae568d37c3b73449009674875529a984555dd1 # main
         with:
-          deno-version: 1.29.3
+          deno-version: 1.44.4
 
       - name: 📦 Bundle up
         if: ${{ env.DEPLOY_MODE == 'action' }}
