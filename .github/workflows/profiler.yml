@@ -45,14 +45,22 @@ env:
   MODE: 'p1'
   QDOH: 'q'
 
+permissions:
+  contents: read
+
 jobs:
   profiler1:
     name: 🕒 Fetch profiler
     runs-on: ubuntu-latest
 
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        with:
+          egress-policy: audit
+
       - name: 🍌 Checkout
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           ref: ${{ env.GIT_REF }}
           fetch-depth: 0
@@ -68,7 +76,7 @@ jobs:
       # docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs-or-python
       - name: 🐎 Setup Node @v19
         if: env.JS_RUNTIME == 'node'
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           node-version: ${{ env.NODE_VER }}
 
@@ -82,7 +90,7 @@ jobs:
       # deno.com/blog/deploy-static-files#example-a-statically-generated-site
       - name: 🦕 Setup Deno @1.29.3
         if: env.JS_RUNTIME == 'deno'
-        uses: denoland/setup-deno@main
+        uses: denoland/setup-deno@5fae568d37c3b73449009674875529a984555dd1 # main
         with:
           deno-version: ${{ env.DENO_VER }}
 

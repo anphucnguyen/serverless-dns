@@ -26,13 +26,23 @@ env:
   GH_REF: "${{ github.ref }}"
   GH_SHA: ${{ github.sha }}
 
+permissions:
+  contents: read
+
 jobs:
   lint-fmt:
+    permissions:
+      contents: write  # for Git to git push
     name: Lint & fmt
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        with:
+          egress-policy: audit
+
       - name: 🚚 Get latest code
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           # Checkout base (target) repo
           ref: ${{ env.GH_REF }}

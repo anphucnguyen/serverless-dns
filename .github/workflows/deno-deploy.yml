@@ -53,6 +53,9 @@ env:
   IN_FILE: 'src/server-deno.ts'
   OUT_FILE: 'rethinkdns.js'
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     name: 🌯 Deno Deploy
@@ -63,8 +66,13 @@ jobs:
       # needed to clone repo
       contents: read
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        with:
+          egress-policy: audit
+
       - name: 🚚 Fetch code
-        uses: actions/checkout@v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           ref: ${{ github.event.inputs.git-ref || github.ref }}
           fetch-depth: 0
@@ -85,8 +93,8 @@ jobs:
           git reset
           git merge origin/${BUILD_BRANCH} || :
 
-      - name: 🦕 Install Deno @1.44
-        uses: denoland/setup-deno@main
+      - name: 🦕 Install Deno @1.29
+        uses: denoland/setup-deno@5fae568d37c3b73449009674875529a984555dd1 # main
         with:
           deno-version: 1.44.4
 
@@ -103,7 +111,7 @@ jobs:
       - name: 🤸🏼 Deploy to deno.com
         id: dd
         if: ${{ env.DEPLOY_MODE == 'action' }}
-        uses: denoland/deployctl@1.12.0
+        uses: denoland/deployctl@612f83df2b874c6908d68de5cf3f36a6538fa8f7 # 1.12.0
         with:
           project: ${{ env.PROJECT_NAME }}
           entrypoint: ${{ env.OUT_FILE }}
