@@ -53,6 +53,9 @@ env:
   IN_FILE: 'src/server-deno.ts'
   OUT_FILE: 'rethinkdns.js'
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     name: 🌯 Deno Deploy
@@ -63,6 +66,11 @@ jobs:
       # needed to clone repo
       contents: read
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        with:
+          egress-policy: audit
+
       - name: 🚚 Fetch code
         uses: actions/checkout@v4
         with:

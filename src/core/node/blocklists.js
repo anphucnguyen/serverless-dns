@@ -67,6 +67,8 @@ function save(bw, timestamp, codec) {
 }
 
 // fmmap mmaps file at fp for random reads, returns a Buffer backed by the file.
+
+
 async function fmmap(fp) {
   const dynimports = envutil.hasDynamicImports();
   const isNode = envutil.isNode();
