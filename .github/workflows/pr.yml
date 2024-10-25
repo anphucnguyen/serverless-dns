@@ -108,6 +108,9 @@ jobs:
       # for pushing to forks.
       - name: 🚢 Push to fork?
         if: ${{ env.BASE_REPO != env.PR_HEAD_REPO }}
+        env:
+          PR_HEAD_REF: ${{ env.PR_HEAD_REF }}
+          PR_HEAD_REPO: ${{ env.PR_HEAD_REPO }}
         run: |
-          git remote add fork ${{ env.PR_HEAD_REPO }}
-          git push fork HEAD:${{ env.PR_HEAD_REF }}
+          git remote add fork "$PR_HEAD_REPO"
+          git push fork HEAD:"$PR_HEAD_REF"
