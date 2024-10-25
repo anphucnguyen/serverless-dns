@@ -37,20 +37,12 @@ jobs:
           egress-policy: audit
 
       - name: "Checkout code"
-<<<<<<< HEAD
         uses: actions/checkout@v4
-=======
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
->>>>>>> serverless-dns-main
         with:
           persist-credentials: false
 
       - name: "Run analysis"
-<<<<<<< HEAD
         uses: ossf/scorecard-action@v2.3.1
-=======
-        uses: ossf/scorecard-action@dc50aa9510b46c811795eb24b2f1ba02a914e534 # v2.3.3
->>>>>>> serverless-dns-main
         with:
           results_file: results.sarif
           results_format: sarif
